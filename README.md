@@ -1,5 +1,7 @@
 # DevFlow — Developer Productivity Dashboard (Pro Edition)
 
+> **Live deployment:** <https://devflow-eight-ruddy.vercel.app> (deployed to Vercel)
+
 A modern, production-grade **Developer Productivity Dashboard** engineered with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, accessible **shadcn/ui** design patterns, and **Lucide React**.
 
 Built as an evaluation-grade project prioritizing engineering quality, responsive design, robust state management, Pomodoro focus flows, and real-world developer workflows.
