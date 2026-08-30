@@ -29,6 +29,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# opencode (local AI tooling config)
+.opencode
+opencode.json
+opencode.jsonc
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
