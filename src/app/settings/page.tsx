@@ -8,13 +8,11 @@ import {
   Moon,
   Laptop,
   Target,
-  Key,
   Bell,
   Github,
   Keyboard,
   Mail,
   MapPin,
-  Copy,
   Check,
   GitBranch,
 } from "lucide-react";
@@ -58,7 +56,6 @@ export default function SettingsPage() {
     githubState,
     githubAccount,
   } = useDashboard();
-  const [copiedKey, setCopiedKey] = useState(false);
   const [editProfileOpen, setEditProfileOpen] = useState(false);
 
   const tasksGoal = goals.find((g) => g.type === "tasks");
@@ -76,11 +73,6 @@ export default function SettingsPage() {
   );
 
   const isGithubConnected = githubState === "connected" && !!githubAccount;
-
-  const handleCopy = () => {
-    setCopiedKey(true);
-    setTimeout(() => setCopiedKey(false), 2000);
-  };
 
   const handleSaveGoals = (e: React.FormEvent) => {
     e.preventDefault();
@@ -479,50 +471,6 @@ export default function SettingsPage() {
           </div>
           <p className="mt-3 text-[11px] text-slate-400 dark:text-slate-500">
             Press G then a letter to navigate between sections.
-          </p>
-        </CardContent>
-      </Card>
-
-      {/* 7. API Access Key */}
-      <Card className="p-6">
-        <CardHeader className="p-0 pb-5 border-b border-slate-100 dark:border-slate-800">
-          <CardTitle className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-            <Key className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
-            Developer API Access Key
-          </CardTitle>
-          <CardDescription className="text-xs text-slate-500 dark:text-slate-400">
-            Authenticate the DevFlow CLI and webhook dispatchers.
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent className="p-0 pt-4 space-y-3">
-          <div className="flex items-center gap-2">
-            <Input
-              readOnly
-              value="df_live_98a72b8d9c0e4f1a2b3c4d5e6f7a8b9c"
-              className="font-mono text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 h-9"
-            />
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleCopy}
-              className="h-9 text-xs shrink-0 gap-1.5 border-slate-200 dark:border-slate-700"
-            >
-              {copiedKey ? (
-                <>
-                  <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
-                  <span>Copied</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3.5 w-3.5" />
-                  <span>Copy</span>
-                </>
-              )}
-            </Button>
-          </div>
-          <p className="text-[11px] text-slate-400 dark:text-slate-500">
-            Never share this secret token in client-side code or public repositories.
           </p>
         </CardContent>
       </Card>
